@@ -1,30 +1,53 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/programming">Programming</a></li>
-	        		<li><a href="/rowing">Rowing</a></li>
-	      			<li><a href="/blog">Blog</a></li>
-	    		</ul>
-			</nav>
-			<div class="container">
-			
-			{{ content }}
-			
-			</div><!-- /.container -->
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:chandlerscheurkogel@gmail.com">email</a></li>
-	        		<li><a href="https://github.com/chandlerscheurkogel">github.com/chandlerscheurkogel</a></li>
-				</ul>
-			</footer>
-		</body>
-	</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    <meta name="author" content="{{ site.name }}" />
+    <meta name="description" content="{{ site.description }}">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body class="hidden-pulldown{% if page.headline or page.cover-image %} cover-image{% endif %}">
+    <section class="site-nav">
+      <header>
+        <nav id="navigation">
+          <a href="{{ site.baseurl }}/" class="brand"><img src="{{ site.logo }}" /></a>
+          <ul>
+            <li><a href="{{ site.baseurl }}/">About</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/portfolio/">Portfolio</a></li>
+            <li><a href="mailto:channing.pear@utexas.edu">Contact</a></li>
+          </ul>
+          <a id="pull" href="#" onclick="togglePullDown(); return false;"><i class="fa fa-bars"></i></a>
+        </nav>
+      </header>
+    </section>
+
+    {{ content }}
+
+  <footer class="site-footer">
+    <div class="container">
+    <p>Copyright &copy {{ site.time | date: '%Y' }} Channing Pear</p>
+    </div>
+  </footer>
+
+    {% include analytics.html %}
+  </body>
+  <script src="{{ site.baseurl }}/js/classie.js"></script>
+  <script src="{{ site.baseurl }}/js/nav.js"></script>
+</html>
