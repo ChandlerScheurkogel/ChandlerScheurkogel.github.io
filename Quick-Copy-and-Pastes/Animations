@@ -1,4 +1,8 @@
- <link rel="stylesheet" href="css/animate.css"> //Needed in the file if animations are being used
+ <link rel="stylesheet" href="css/animate.css"> 
+//Needed in the file if animations are being used
  
- <div class="{NAME OF AREA (CAN BE ANYTHING I WANT)} {ANIMATION NAME} animated"> //The animation iteself
- </div> //Needed to close the animation
+ <div class="{NAME OF AREA (CAN BE ANYTHING I WANT)} {ANIMATION NAME} animated"> 
+ //The animation iteself
+ 
+ </div>
+ //Needed to close the animation
